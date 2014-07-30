@@ -1,0 +1,50 @@
+/*universal styling*/
+body{
+	background: #C0C0C0;
+	font-family: Impact, Charcoal, sans-serif;
+}
+a{
+	color: red;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+
+li{
+	list-style: none;
+}
+
+.topBanner {
+	width: 300px;
+	height: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.topBanner a {
+	width: 100px;
+	height: 35px;
+	margin: 0 25px 0 25px;
+	display: inline;
+	float: left;
+	text-align: center;
+	background: #ededed;
+	padding-top: 15px;
+}
+.topBanner a:hover{
+	background: #fff;
+}
+.contentWrapper
+{
+	text-align: center;
+}
+
+.contentWrapper ul{
+	padding: 0;
+
+}
+
+.contentWrapper img{
+	max-width: 500px;
+
+}

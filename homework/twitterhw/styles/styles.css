@@ -1,0 +1,56 @@
+body, ul, li, h1, h2
+{
+	margin:0;
+	padding:0;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 200;
+
+}
+
+h1 { font-size: 50; color: #FFF; margin-top: 0; margin-bottom: 5; padding-top: 50; font-weight:400; text-shadow: 0 1px 2px #666666;}
+h2 { color:#FFF; padding-right: 200; padding-left: 200; font-weight: 75}
+
+li {letter-spacing: .1; word-spacing: 7; }
+
+.headerMargin{
+	width: 80%;
+	padding:0 10%;
+}
+
+#topHead{
+	background: #fff;
+	height:40px;
+	display:block;
+}
+
+#midHead{
+	background: #efefef;
+	display:block;
+	height:40px;
+}
+
+#bottomHead{
+	background: transparent url(../images/peoplebg.jpg) scroll repeat-x center center;
+	text-align: center;
+	height: 200px; 
+}
+
+.headerLeft{
+	float:left;
+	display:inline;
+}
+
+.headerRight{
+	float:right;
+	display:inline;
+}
+
+ul.inlineList{
+	list-style: none;
+}
+
+ul.inlineList li
+{
+	float:left;
+	display:inline;
+}
