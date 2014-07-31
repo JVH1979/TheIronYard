@@ -1,10 +1,16 @@
-/*universal styling*/
+h1 {font-size: 90; margin-top: 0; margin-bottom: 10; padding-top: 30; font-weight: 0; text-align: left; text-shadow:0 5px 10px #615A5A;}
+
+
 body{
-	background: #s;
-	font-family: Impact, Charcoal, sans-serif;
+	background: #C0C0C0;
+	font-family: 'Sanchez', serif;
+	font-size: 75px;
+
+
+	
 }
-a{
-	color: red;
+a{	
+	color: grey;
 	text-decoration: none;
 }
 a:hover{
@@ -23,9 +29,9 @@ li{
 }
 .topBanner a {
 	width: 100px;
-	height: 35px;
-	margin: 0 25px 0 25px;
-	display: inline;
+	height: 40px;
+	margin: 10 25px 10 25px;
+	display: inline-block;
 	float: left;
 	text-align: center;
 	background: #ededed;
