@@ -20,8 +20,5 @@ get '/liquor.erb' do
 	erb :liquor
 end
 
-get "/" do
-	@lorem = Faker::Lorem.word
-	erb :liquor
-end
+
   
