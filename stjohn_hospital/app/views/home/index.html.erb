@@ -1,0 +1,14 @@
+<h1>hospital patients</h1>
+
+<%= link_to "New Patient", new_patient_path %>
+<br>
+<% @patients.each do |patient| %>
+	<%= patient.firstname %>
+	<%= patient.lastname %>
+	<%= patient.dob %>
+	<%= patient.ailment %>
+	<%= link_to patient.firstname, patient_path(patient) %>
+	<%= link_to "Edit", edit_patient_path(patient) %>
+	<%= link_to "Delete", patient_path(patient), method: :delete %>
+	<br>
+<% end %>
