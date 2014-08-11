@@ -26,4 +26,17 @@
   = f.label"female"
   = f.radio_button :gender, "female"
   %br/
+  = f.label "waiting"
+  = f.radio_button(:workflow_state, :waitroom) 
+  = f.label "checkup"
+  = f.radio_button(:workflow_state, :checkup_complete)
+  = f.label "x_ray_now"
+  = f.radio_button(:workflow_state, :x_ray_now)
+  = f.label "surgery_now"
+  = f.radio_button(:workflow_state, :surgery_now)
+  = f.label "paying_bill"
+  = f.radio_button(:workflow_state, :pay)
+  = f.label "discharge"
+  = f.radio_button(:workflow_state, :discharge)
+  %br/
   = f.submit

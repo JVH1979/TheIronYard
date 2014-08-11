@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :patients do
+    member do
+      put :waiting
+      put :checkup_complete
+      put :xray_complete
+      put :surgery_complete
+      put :paid
+    end
+  end
+
   root 'home#index'
 
   resources :patients

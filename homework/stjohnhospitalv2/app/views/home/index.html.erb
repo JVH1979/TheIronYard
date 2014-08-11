@@ -8,9 +8,10 @@
 	<%= patient.dob %>
 	<%= patient.ailment %>
 	<%= patient.gender %>
-	<%= patient.status %>
+	<%= patient.workflow_state %>
 	<%= link_to patient.firstName, patient_path(patient) %>
 	<%= link_to "Edit", edit_patient_path(patient) %>
 	<%= link_to "Delete", patient_path(patient), method: :delete %>
+	
 	<br>
 <% end %>

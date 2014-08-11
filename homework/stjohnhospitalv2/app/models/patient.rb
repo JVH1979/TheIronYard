@@ -1,5 +1,12 @@
 class Patient < ActiveRecord::Base
 
+	validates :firstName, presence: true
+	validates :lastName, presence: true
+	validates :dob, presence: true
+	validates :ailment, presence: true
+	validates :gender, presence: true
+	validates :workflow_state, presence: true
+	
 	include Workflow
 	workflow do 
 
