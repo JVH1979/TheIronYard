@@ -36,5 +36,5 @@ end
 
 private
    def que_params
-   	params.require(:patient).permit(:firstname, :lastname, :dob, :ailment, :gender)
+   	params.require(:patient).permit(:firstname, :lastname, :dob, :ailment, :gender, :workflow_state)
    end

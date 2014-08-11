@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140805175442) do
     t.string   "gender"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "workflow_state"
   end
 
 end

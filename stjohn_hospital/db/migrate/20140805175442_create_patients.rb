@@ -7,6 +7,7 @@ class CreatePatients < ActiveRecord::Migration
       t.string :ailment
       t.string :gender
       t.timestamps
+      t.string :workflow_state
     end
   end
 end

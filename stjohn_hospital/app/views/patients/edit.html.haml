@@ -1,0 +1,17 @@
+%h1
+  Edit Patient Info
+  = form_for @patient do |f|
+    = f.label :firstname
+    = f.label :lastname
+    = f.label :dob
+    = f.label :ailment
+    = f.label :gender
+    = f.label :status
+    = f.text_field :firstname
+    = f.text_field :lastname
+    = f.date_select :dob
+    = f.text_field :ailment
+    = radio_button_tag :male, :female
+    = radio_button_tag :status
+    %br/
+    = f.submit
