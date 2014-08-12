@@ -1,4 +1,5 @@
 = link_to "Back", root_path
+
 = form_for @patient do |f|
   - if  f.object.errors.messages.length > 0
     - f.object.errors.messages.inspect

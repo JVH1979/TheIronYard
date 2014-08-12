@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :patients do
+  resources :hospitals do
+   resources :patients do
     member do
       put :waiting
       put :checkup_complete
@@ -7,11 +8,11 @@ Rails.application.routes.draw do
       put :surgery_complete
       put :paid
     end
+    resources :medications do
+    end
+    root 'home#index'
   end
-
-  root 'home#index'
-
-  resources :patients
+end  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -66,4 +67,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+ end

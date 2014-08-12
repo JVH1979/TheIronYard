@@ -1,0 +1,11 @@
+%h1 Hospitals
+
+= link_to "Create Hospital", new_hospital_path
+%ul
+  - @hospitals.each do |hospital|
+    %li
+      = hospital.name
+      = link_to "Edit Hospital", edit_hospital_path(hospital)
+      = link_to "Delete Hospital", hospital_path(hospital), method: :delete
+    %br
+
