@@ -30,6 +30,7 @@ gem 'workflow'
 gem 'date_validator'
 gem 'haml-rails'
 gem 'html2haml'
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

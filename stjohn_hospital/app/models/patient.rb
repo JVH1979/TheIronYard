@@ -1,5 +1,7 @@
 class Patient < ActiveRecord::Base
 
+  before_action :authenticate_user!
+
 include Workflow
   workflow do
     state :admittance do 

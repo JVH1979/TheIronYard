@@ -1,0 +1,7 @@
+%h1 Show Patient Information
+= @patient.first_name
+= @patient.last_name
+= @patient.dob
+= @patient.ailment
+= @patient.gender
+= link_to "Back", hospital_path(@hospital)

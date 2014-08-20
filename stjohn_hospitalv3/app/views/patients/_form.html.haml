@@ -1,0 +1,20 @@
+= form_for @patient do |f|
+  %br/
+  = f.label :first_name
+  = f.text_field :first_name
+  %br/
+  = f.label :last_name
+  = f.text_field :last_name
+  %br/
+  = f.label :dob
+  = f.date_select(:dob, :start_year => 1910)
+  %br/
+  = f.label :ailment
+  = f.text_field :ailment
+  %br/
+  = f.label "male"
+  = f.radio_button :gender, "male"
+  = f.label "female"
+  = f.radio_button :gender, "female"
+  %br/
+  = f.submit
