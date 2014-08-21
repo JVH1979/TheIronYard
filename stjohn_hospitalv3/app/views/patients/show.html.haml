@@ -4,4 +4,9 @@
 = @patient.dob
 = @patient.ailment
 = @patient.gender
-= link_to "Back", hospital_path(@hospital)
+
+%p Hospital
+  -if @patient.hospital
+    = link_to @hospital.try(:name), hospital_path(@hospital)
+
+= link_to "Back", hospital_patients_path(@hospital)

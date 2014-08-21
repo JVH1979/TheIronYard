@@ -1,0 +1,14 @@
+%h1 Patient
+= link_to "New Patient", new_hospital_patient_path
+%br/
+
+-@patients.each do |patient|
+  = patient.first_name
+  = patient.last_name
+  = patient.dob
+  = patient.ailment
+  = patient.gender
+  = link_to "Edit", edit_hospital_patient_path(:hospital_id, patient)
+  = link_to "Delete", hospital_patient_path(:hospital_id, patient), method: :delete
+  
+%br/

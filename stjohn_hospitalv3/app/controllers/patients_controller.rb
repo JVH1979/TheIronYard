@@ -1,15 +1,22 @@
 class PatientsController < ApplicationController
   
 before_action :authenticate_user!
+  
+  def index
+    @patients = Patient.all
+    @dealership = Hospital.find params[:hospital_id]
+  end
+
   def new
     @patient = Patient.new
+    @medications = Medications.all
     @hospital = Hospital.find params[:hospital_id]
   end
 
   def create
-    @hospital = Hospital.find params[:hospital_id]
+    #@hospital = Hospital.find params[:hospital_id]
     @patient = @hospital.patients.new(patient_params)
-    redirect_to root_path
+    redirect_to hospital_path(@hospital)
   end
 
   def edit
@@ -21,18 +28,18 @@ before_action :authenticate_user!
     @hospital = Hospital.find params[:hospital_id]
     #@patient = Patient.find params[:id]
     #@patient.update_attributes patient_params
-    #redirect_to root_path
+    redirect_to hospital_path(@hospital)
   end
 
   def show
-    @patient = Patient.find params[:id]
+    @hospital = Hospital.find params[:hospital_id]
   end
 
   def destroy
-    @hospital = Hospital.find params[:hospital_id]
+    #@hospital = Hospital.find params[:hospital_id]
     #@patient = Patient.find params[:id]
     @patient.delete
-    #redirect_to root_path
+    redirect_to hospital_path
   end
 
 
