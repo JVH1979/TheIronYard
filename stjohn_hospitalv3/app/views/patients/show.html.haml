@@ -1,12 +1,22 @@
 %h1 Show Patient Information
+
 = @patient.first_name
 = @patient.last_name
 = @patient.dob
 = @patient.ailment
 = @patient.gender
 
-%p Hospital
-  -if @patient.hospital
-    = link_to @hospital.try(:name), hospital_path(@hospital)
 
+%p 
+-if @patient.hospital
+  = link_to @hospital.try(:name), hospital_path(@hospital)
+%br
+= link_to 'Add Medications', new_hospital_patient_medication_path(@hospital, @patient)
+%br
+-#- @patient.medications.each do |medication|
+  
+-#  = link_to medication.name, hospital_patient_medication_path(@hospital, @patient, medication)
+-#  = link_to 'Edit', edit_hospital_patient_medication_path(@hospital, @patient, medication)
+-#  = link_to 'Destroy', hospital_patient_medication_path(@hospital, @patient, medication), :method => :delete
+%br
 = link_to "Back", hospital_patients_path(@hospital)

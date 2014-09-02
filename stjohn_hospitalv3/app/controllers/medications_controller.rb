@@ -1,9 +1,15 @@
 class MedicationsController < ApplicationController
   
 before_action :authenticate_user!
-  
+before_action :find_patient, only: [:show, :edit, :update, :destroy, :hospital_id]
+before_action :find_hospital
+before_action :find_medication, only: [:show, :edit, :update, :destroy]
+
   def index
-    @medications = Medication.all
+    @hospital = Hospital.find params[:hospital_id]
+    @patients = @hospital.patients
+    @patient = @hospital.patients.find params[:patient_id]
+    @medication = Medication.all
   end
 
   def new
@@ -13,13 +19,13 @@ before_action :authenticate_user!
   end
 
   def show
-    @medication = Medication.find params[:id]
+    @hospital = Hospital.find params[:hospital_id]
   end
 
   def create
     @hospital = Hospital.find params[:hospital_id]
     @patient = Patient.find params[:patient_id]
-    @medication = @patient.medications.new(que_params)
+    #@medication = @patient.medications.create(medication_params)
     redirect_to hospital_patient_path(@hospital, @patient)
   end
 
@@ -33,7 +39,7 @@ before_action :authenticate_user!
     @hospital = Hospital.find params[:hospital_id]
     @patient = Patient.find params[:patient_id]
     @medication = Medication.find params[:id]
-    @medication.update_attributes que_params
+    @medication.update_attributes medication_params
     redirect_to medications_path
   end
 
@@ -46,8 +52,19 @@ before_action :authenticate_user!
   end
 
 private
-  def que_params
-    params.require(:medication).permit(:name)
+  def medication_params
+    params.require(:medication).permit(:name, :patient_id)
   end
 
+  def find_patient
+    @patient = Patient.find params[:id]
+  end
+
+  def find_hospital
+    @hospital = Hospital.find params[:hospital_id]
+  end
+
+  def find_medication
+    @medication = Medication.find params[:id]
+  end
 end

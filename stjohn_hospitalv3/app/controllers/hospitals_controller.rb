@@ -1,6 +1,7 @@
 class HospitalsController < ApplicationController
   
 before_action :authenticate_user!
+before_action :find_hospital, only: [:show, :edit, :update, :destroy]
 
   def index
     @hospitals = Hospital.all
@@ -26,7 +27,7 @@ before_action :authenticate_user!
   end
 
   def show
-    @hospital = Hospital.find params[:id]
+    @patients = @hospital.patients
   end
 
    def destroy
@@ -38,5 +39,13 @@ before_action :authenticate_user!
 private
   def hospital_params
     params.require(:hospital).permit(:name)
+  end
+
+  def find_hospital
+     @hospital = Hospital.find params[:id]
+  end
+  
+  def patient_params
+    params.require(:patient).permit(:first_name, :last_name, :dob, :ailment, :gender, :hospital_id)
   end
 end

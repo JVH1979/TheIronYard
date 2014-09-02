@@ -12,11 +12,14 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap
+ *= require bootstrap-theme
+ 
  */
 body {
   background-color: #99CCFF;
   color: #CC3333;
-  font-family: font-family: Impact, Charcoal, sans-serif;;
+  font-family: Impact, Charcoal, sans-serif;;
   font-size: 15px;
   line-height: 18px;
 }

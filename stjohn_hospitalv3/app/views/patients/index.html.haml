@@ -3,12 +3,13 @@
 %br/
 
 -@patients.each do |patient|
-  = patient.first_name
-  = patient.last_name
+  = link_to "#{patient.first_name}  #{patient.last_name}", hospital_patients_path(@hospital, patient)
   = patient.dob
   = patient.ailment
   = patient.gender
+
   = link_to "Edit", edit_hospital_patient_path(:hospital_id, patient)
   = link_to "Delete", hospital_patient_path(:hospital_id, patient), method: :delete
+  %br/
   
-%br/
+=link_to "Back to Hospital", hospitals_path
