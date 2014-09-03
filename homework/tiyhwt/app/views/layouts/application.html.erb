@@ -1,0 +1,32 @@
+
+<body>
+ <!DOCTYPE html>
+<html>
+  <head>
+    <title>The Iron Yard Homework Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <h1></h1>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+  </body>
+</html>
+    
+<!DOCTYPE html>
+<html>
+<head>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<%= yield %>
+
+</body>
+</html>
