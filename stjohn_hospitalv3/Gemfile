@@ -33,6 +33,9 @@ gem 'devise'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'shoulda-matchers'
+  gem 'capybara', '~> 2.4.1'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
 end
 
 

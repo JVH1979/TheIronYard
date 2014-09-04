@@ -42,14 +42,14 @@
            
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                Dropdown
+                Menu
                 %span.caret
               %ul.dropdown-menu{:role => "menu"}
                 %li
-                  %a{:href => "new_user_session_path"} Sign In
+                  =link_to "Sign In", new_user_session_path(@user) 
                 %li
-                  %a{:href => "destroy_user_session_path", method: :delete} Sign Out
-                %li
+                  =link_to "Sign Out", destroy_user_session_path, method: :delete 
+                
                  
              
         / /.nav-collapse
