@@ -38,7 +38,7 @@ before_action :find_hospital, only: [:show, :edit, :update, :destroy]
 
 private
   def hospital_params
-    params.require(:hospital).permit(:name)
+    params.require(:hospital).permit(:name, :address, :longitude, :latitude)
   end
 
   def find_hospital

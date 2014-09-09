@@ -1,8 +1,13 @@
 %h1 Hospital's
 = link_to "New Hospital", new_hospital_path
+- markers = ''
 %br/
 - @hospitals.each do |hospital|
   = link_to hospital.name, hospital_path(hospital)
   = link_to "Edit", edit_hospital_path(hospital)
   = link_to "Delete", hospital_path(hospital), method: :delete
+  - markers << "#{hospital.latitude}%2C#{hospital.longitude}&"
   %br/
+
+  = image_tag "http://maps.google.com/maps/api/staticmap?size=1000x1000&sensor=false&markers=#{markers}"
+
