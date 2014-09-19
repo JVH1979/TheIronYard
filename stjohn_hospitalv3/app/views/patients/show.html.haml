@@ -2,9 +2,13 @@
 
 = @patient.first_name
 = @patient.last_name
+%br
 = @patient.dob
+%br
 = @patient.ailment
+%br
 = @patient.gender
+
 
 
 %p 
@@ -13,10 +17,12 @@
 %br
 = link_to 'Add Medications', new_hospital_patient_medication_path(@hospital, @patient)
 %br
--#- @patient.medications.each do |medication|
+- @patient.medications.each do |medication|
   
--#  = link_to medication.name, hospital_patient_medication_path(@hospital, @patient, medication)
--#  = link_to 'Edit', edit_hospital_patient_medication_path(@hospital, @patient, medication)
--#  = link_to 'Destroy', hospital_patient_medication_path(@hospital, @patient, medication), :method => :delete
+  = link_to medication.name, hospital_patient_medication_path(@hospital, @patient, medication)
+  |
+  = link_to 'Edit', edit_hospital_patient_medication_path(@hospital, @patient, medication)
+  |
+  = link_to 'Destroy', hospital_patient_medication_path(@hospital, @patient, medication), :method => :delete
 %br
 = link_to "Back", hospital_patients_path(@hospital)

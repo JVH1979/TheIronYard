@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="Calculator">
+<head>
+    <title>4127 Calculations</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="calculator" ng-controller="indexCTRL">
+        <h1> {{title}}</h1>
+       
+        <div>{{result}}</div>
+        <button class="btn" type="button" ng-click="press('C')">C</button>
+        <button class="btn" type="button" ng-click="press('+')">+</button>
+        <button class="btn" type="button" ng-click="press('-')">-</button>
+        <br>
+        <button class="btn" type="button" ng-click="press('*')">*</button>
+        <button class="btn" type="button" ng-click="press('/')">/</button>
+        <button class="btn" type="button" ng-click="press('=')">=</button>
+        <br>
+        <button class="btn" type="button" ng-click="press('1')">1</button>
+        <button class="btn" type="button" ng-click="press('2')">2</button>
+        <button class="btn" type="button" ng-click="press('3')">3</button>
+        <br>
+        <button class="btn" type="button" ng-click="press('4')">4</button>
+        <button class="btn" type="button" ng-click="press('5')">5</button>
+        <button class="btn" type="button" ng-click="press('6')">6</button>
+        <br>
+        <button class="btn" type="button" ng-click="press('7')">7</button>
+        <button class="btn" type="button" ng-click="press('8')">8</button>
+        <button class="btn" type="button" ng-click="press('9')">9</button>
+        <button class="btn" type="button" ng-click="press('0')">0</button>
+    </div>
+ 
+    <script src="/vendor/angular.min.js"></script>
+    <script src="/assets/indexCTRL.js"></script>
+ 
+</body>
+</html>
+ 

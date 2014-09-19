@@ -1,7 +1,7 @@
 class MedicationsController < ApplicationController
   
 before_action :authenticate_user!
-before_action :find_patient, only: [:show, :edit, :update, :destroy, :hospital_id]
+before_action :find_patient
 before_action :find_hospital
 before_action :find_medication, only: [:show, :edit, :update, :destroy]
 
@@ -13,8 +13,8 @@ before_action :find_medication, only: [:show, :edit, :update, :destroy]
   end
 
   def new
-    @hospital = Hospital.find params[:hospital_id]
-    @patient = Patient.find params[:patient_id]
+    #@hospital = Hospital.find params[:hospital_id]
+    #@patient = Patient.find params[:patient_id]
     @medication = Medication.new
   end
 
@@ -23,9 +23,9 @@ before_action :find_medication, only: [:show, :edit, :update, :destroy]
   end
 
   def create
-    @hospital = Hospital.find params[:hospital_id]
-    @patient = Patient.find params[:patient_id]
-    #@medication = @patient.medications.create(medication_params)
+    #@hospital = Hospital.find params[:hospital_id]
+    #@patient = Patient.find params[:patient_id]
+    @medication = @patient.medications.create(medication_params)
     redirect_to hospital_patient_path(@hospital, @patient)
   end
 
@@ -36,17 +36,17 @@ before_action :find_medication, only: [:show, :edit, :update, :destroy]
   end
 
   def update
-    @hospital = Hospital.find params[:hospital_id]
-    @patient = Patient.find params[:patient_id]
-    @medication = Medication.find params[:id]
+    #@hospital = Hospital.find params[:hospital_id]
+    #@patient = Patient.find params[:patient_id]
+    #@medication = Medication.find params[:id]
     @medication.update_attributes medication_params
-    redirect_to medications_path
+    redirect_to hospital_patient_path(@hospital, @patient)
   end
 
   def destroy
-    @hospital = Hospital.find params[:hospital_id]
-    @patient = Patient.find params[:patient_id]
-    @medication = Medication.find params[:id]
+    #@hospital = Hospital.find params[:hospital_id]
+    #@patient = Patient.find params[:patient_id]
+    #@medication = Medication.find params[:id]
     @medication.delete
     redirect_to medications_path
   end
@@ -57,7 +57,7 @@ private
   end
 
   def find_patient
-    @patient = Patient.find params[:id]
+    @patient = Patient.find params[:patient_id]
   end
 
   def find_hospital

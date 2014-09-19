@@ -2,14 +2,14 @@ class PatientsController < ApplicationController
   
 before_action :authenticate_user!
 before_action :find_patient, only: [:show, :edit, :update, :destroy, :hospital_id]
-#before_action :find_hospital
+before_action :find_hospital
   
   def index
     @patients = Patient.all
     @hospital = Hospital.find params[:hospital_id]
-    @patients = @hospital.patients
+    #@patients = @hospital.patients
     @patient = @hospital.patients params[:id]
-    #@medications= @hopital.patient.medications
+    #@medications= @hopital.patient.medications[:id]
   end
 
   def new
@@ -57,8 +57,8 @@ private
     @patient = Patient.find params[:id]
   end
 
-  #def find_hospital
-    #@hospital = Hospital.find params[:hospital_id]
-  #end
+  def find_hospital
+    @hospital = Hospital.find params[:hospital_id]
+  end
 end
 
