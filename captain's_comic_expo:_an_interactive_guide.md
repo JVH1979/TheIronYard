@@ -39,7 +39,7 @@ The news section will have up to date news pertaining to the event. There will b
 <br>- AJAX |5 hours|
 <br>Time Estimate = 22 hours
 
-####Total Time = 54 hours 
+####Total Time = 108 hours 
 
 
 
